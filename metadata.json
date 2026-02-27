@@ -1,0 +1,5 @@
+{
+  "name": "Remix: Verse Event Calendar",
+  "description": "A modern, responsive event calendar for the Verse ecosystem with real-time countdowns and browser notifications.",
+  "requestFramePermissions": []
+}
