@@ -17,9 +17,10 @@ interface EventCardProps {
   event: Event;
   onEdit?: () => void;
   onDelete?: () => void;
+  onJoin?: () => void;
 }
 
-export default function EventCard({ event, onEdit, onDelete }: EventCardProps) {
+export default function EventCard({ event, onEdit, onDelete, onJoin }: EventCardProps) {
   const [status, setStatus] = useState(getEventStatus(event.startTime, event.endTime));
   const [hasReminder, setHasReminder] = useState(isReminderSet(event.id));
 
@@ -157,6 +158,7 @@ export default function EventCard({ event, onEdit, onDelete }: EventCardProps) {
             href={event.joinUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={onJoin}
             className="flex-1 flex items-center justify-center gap-2 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 px-4 py-2.5 rounded-xl font-semibold hover:opacity-90 transition-opacity"
           >
             Join Event
